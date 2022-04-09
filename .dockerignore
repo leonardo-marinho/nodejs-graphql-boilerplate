@@ -1,0 +1,10 @@
+# Dependencies
+node_modules
+
+# Enviroments files
+.env*
+!.env.exemple
+
+# Generated files
+src/database/client
+src/api/schemas/schema.graphql

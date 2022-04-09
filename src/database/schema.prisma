@@ -1,0 +1,23 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "./client"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+generator graphql {
+  provider = "graphql-schema-generator"
+  output = "../api/schemas"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  ukey                  Int       @id @default(autoincrement())
+  active Boolean?
+  email String?
+  name String?
+  password String?
+}
